@@ -1,23 +1,35 @@
-#1.1 replement a recursive function in celebrate the factorial of a given number;
+'''Implement a class called player that represents a cricket player. the player class should have a 
+ method called play() which prints "The player is playing cricket. Derive two classes, Batsman and 
+ Bowler, from the player class. Override the play() method in each derived class to print " The batsman 
+ is batting" and "The bowler is bowling", respectively. Write a program to create objects of both the 
+ Batsman and Bowler classes and call the play() method for each object.'''
 
-"""
-1! = 1*1
-2! = 2*1!===>2*1
-3! = 3*2!===>3*2*1
-.
-.
-10! = 10*9!>10*9*8*.....*1
 
-formula=n*(n-1)!
-"""
+# Define the base class Player
+class Player:
 
-def fact_rec(n):
-  if n==9 or n==1:
-    return 1
-  else:
-    return n*fact_rec(n-1)
+  def play(self):
+    print(" The player cricket.")
 
-number = 4
-res =fact_rec(number)
 
-print("the factorial of{}is{}".format(number,res))
+# Define the derived class Batsman
+class Batsman(Player):
+
+  def play(self):
+    print("The batsman is batting.")
+
+
+# Define the derived class Bowler
+class Bowler(Player):
+
+  def play(self):
+    print("The bowler is bowling.")
+
+
+# Create objects of Batsman and Bowler classes
+batsman = Batsman()
+bowler = Bowler()
+
+# Call the play() method for each object
+batsman.play()
+bowler.play()
